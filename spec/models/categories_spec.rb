@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-describe Account, type: :model do
-  subject { create(:account) }
+describe Category, type: :model do
+  subject { create(:category) }
 
   describe 'Validations' do
-    it { should belong_to(:user) }
     it { should validate_presence_of(:name) }
+    it { should validate_uniqueness_of(:name) }
 
     it "likes valid data" do
       expect(subject.valid?).to be true
