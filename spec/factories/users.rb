@@ -13,4 +13,14 @@ FactoryBot.define do
     email    { 'seller_user@gmail.com' }
     password { 'passcode' }
   end
+  
+  factory :reviewer_user, parent: :user do
+    email    { 'reviewer_user@gmail.com' }
+    password { 'passcode' }
+  end
+  
+  factory :reviewed_user, parent: :user do
+    email    { 'reviewed_user@gmail.com' }
+    password { 'passcode' }
+  end
 end

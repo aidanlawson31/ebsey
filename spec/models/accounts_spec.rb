@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Account, type: :model do
   subject { create(:account) }
 
-  describe 'Validations' do
+  describe 'validations' do
     it { should belong_to(:user) }
     it { should validate_presence_of(:name) }
 

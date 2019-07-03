@@ -16,4 +16,16 @@ FactoryBot.define do
     name { 'the seller' }
     bio  { FFaker::CheesyLingo.sentence }
   end
+  
+  factory :reviewer_account, parent: :account do
+    user { User.find_by(email: 'reviewer_user@gmail.com') || create(:reviewer_user) }
+    name { 'the reviewer' }
+    bio  { FFaker::CheesyLingo.sentence }
+  end
+  
+  factory :reviewed_account, parent: :account do
+    user { User.find_by(email: 'reviewed_user@gmail.com') || create(:reviewed_user) }
+    name { 'the reviewed' }
+    bio  { FFaker::CheesyLingo.sentence }
+  end
 end
