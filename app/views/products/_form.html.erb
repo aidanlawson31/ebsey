@@ -1,0 +1,18 @@
+<%= simple_form_for(@product) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs ml-2 mr-8">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :category_id, :collection => Category.all,
+	       :input_html => { :class => 'form-control'}, :label => 'Category',
+				  prompt: "Choose From List" %>
+		<%= f.file_field :pictures, multiple: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Category, type: :model do
-  subject { create(:category) }
+  subject { build(:category) }
 
   describe 'validations' do
     it { should validate_presence_of(:name) }

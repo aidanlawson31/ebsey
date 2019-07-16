@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Review, type: :model do
-  subject { create(:review) }
+  subject { build(:review) }
 
   describe 'validations' do
     it { should validate_presence_of(:content) }

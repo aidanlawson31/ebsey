@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Product, type: :model do
-  subject { create(:product) }
+  subject { build(:product) }
 
   describe 'validations' do
     it { should validate_presence_of(:name) }

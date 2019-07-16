@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Account, type: :model do
-  subject { create(:account) }
+  subject { build(:account) }
 
   describe 'validations' do
     it { should belong_to(:user) }

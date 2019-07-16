@@ -38,6 +38,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise'
 
+gem 'bootstrap', '~> 4.3.1'
+
+gem 'simple_form'
+
 group :development, :test do
   gem "factory_bot_rails"
   gem "rspec-rails", "~> 3.5"

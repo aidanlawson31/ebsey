@@ -1,0 +1,41 @@
+<div class="row">
+	<% if @product.pictures %>
+	  <% @product.pictures.each do |picture|%>
+	    <div class="col-md-6">
+	      <%= image_tag picture, class: "d-block w-100"%>
+	    </div>
+	  <% end %>
+	<% end %>
+	
+	<div class=col>
+		<p class="cat-name">
+	    <%= @product.category.name %>
+	  </p>
+		<div class="categories">
+			<p>
+		    <%= @product.name %>
+		  </p>
+		  <p>
+		    $<%= @product.price %>
+			</p>
+			<p>
+		    <%= @product.description %>
+			</p>
+		</div>
+		<div class="buttons">
+			<% if current_account && current_account.id == @product.seller_id %>
+			  <%= link_to 'Edit',   edit_product_path(@product) %>
+				<%= link_to 'Delete', @product,  method: :delete %>
+			<% else %>
+			  <% if @product.buyer_id %>
+			    <button class= "btn btn-danger">Sold</button>
+			  <% else %>
+			    <% if current_user && current_account %>
+			      <%= link_to 'buy', buy_product_path(@product), method: :post, class: "btn btn-primary"%>
+			    <% end %>
+			  <% end %>
+			<% end %>
+			<%= link_to 'Back', root_path %>
+	  </div>
+  </div>
+</div>
