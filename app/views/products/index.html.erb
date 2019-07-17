@@ -3,11 +3,8 @@
 <div class="row mt-2">
 	<div class="mx-auto">
 		<%= link_to "List Item", new_product_path, class: "btn btn-lg btn-success" %>
-	  <button class="btn btn-secondary btn-lg" type="button">
-	    Categories
-	  </button>
 	  <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	    <span class="sr-only">Toggle Dropdown</span>
+	    <span class="sl-only">Categories</span>
 	  </button>
 	  <div class="dropdown-menu">
 	    <% @categories.each do |category| %>
